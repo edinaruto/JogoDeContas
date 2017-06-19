@@ -1,0 +1,55 @@
+﻿
+
+
+
+ <link rel="stylesheet" href="js/jquery-ui.min.css">
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/engine.js"></script>
+  <script>
+  
+  //Gera janela inicial com ajuda do jQueryUi
+  $(function() {
+    $( "#principal" ).dialog({
+	  width: 500,
+      modal: true,
+      buttons: {
+        "Gerar Conta": function() {
+			$( this ).click(geraConta());
+        }
+      }
+    });
+  });
+  </script>
+
+
+
+<div id="aviso"></div>
+
+<div id="principal">
+	<table>
+		<tr>
+			<td>Numero maximo:</td>
+			
+			<td>
+				<input type="text" value="10" id="contasNumeroMaximo"/>
+			</td>
+		</tr>
+		<tr>
+			<td>Quantidade de numeros:</td>
+			<td><input type="text" value="2" id="contasNumeroQt"/>
+		</tr>
+		<tr>
+			<td>
+			tipo:
+			</td>
+			<td>
+			<input type="checkbox" checked name="contasTipo" valor="+"/>+ | 
+			<input type="checkbox" name="contasTipo" valor="-"/>-<br>
+			<input type="checkbox" name="contasTipo" valor="*"/>* | 
+			<input type="checkbox" name="contasTipo" valor="/"/>/
+			</td>
+		</tr>
+	</table>
+	<small>PS: a quantidade de sinais, e de numeros serão selecionados aleatoriamente</small>
+</div>
